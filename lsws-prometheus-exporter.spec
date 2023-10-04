@@ -2,7 +2,7 @@
 
 Name:           lsws-prometheus-exporter
 Version:        0.0.1
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        LiteSpeed Prometheus Exporter
 
 License:        GPL3
@@ -43,6 +43,9 @@ install -Dpm 0644 %{SOURCE2} %{buildroot}%{_sysconfdir}/sysconfig/%{name}
 
 
 %changelog
+* Wed Oct 04 2023 - Cody Robertson <cody@hawkhost.com> - 0.0.1-3
+- Update service file to use environment file
+
 * Tue Oct 03 2023 - Cody Robertson <cody@hawkhost.com> - 0.0.1-2
 - Add patch to support basic auth
 
