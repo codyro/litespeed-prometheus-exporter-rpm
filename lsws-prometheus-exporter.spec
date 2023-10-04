@@ -1,3 +1,5 @@
+%define debug_package %{nil}
+
 Name:           lsws-prometheus-exporter
 Version:        0.0.1
 Release:        2%{?dist}
