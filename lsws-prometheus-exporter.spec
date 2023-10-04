@@ -9,6 +9,7 @@ License:        GPL3
 URL:            https://github.com/codyro/litespeed-prometheus-exporter
 Source0:        %{name}-%{version}.tar.gz
 Source1:        %{name}.service
+Source2:        %{name}.env
 Patch0:         0001-Implement-basic-auth-w-environmental-variables.patch
 
 BuildRequires:  golang
@@ -28,6 +29,7 @@ CGO_ENABLED=0 GOOS=linux go build -o %{name} -ldflags \
 %install
 install -Dpm 0755 %{name} %{buildroot}%{_bindir}/%{name}
 install -Dpm 0644 %{SOURCE1} %{buildroot}%{_unitdir}/%{name}.service
+install -Dpm 0644 %{SOURCE2} %{buildroot}%{_sysconfdir}/sysconfig/%{name}
 
 %post
 %systemd_post %{name}.service

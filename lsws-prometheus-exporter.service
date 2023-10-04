@@ -4,8 +4,9 @@ After=network-online.target remote-fs.target nss-lookup.target
 Wants=network-online.target
 
 [Service]
+EnvironmentFile=-/etc/sysconfig/lsws-prometheus-exporter
 PIDFile=/var/run/lsws-prometheus-exporter/lsws-prometheus-exporter.pid
-ExecStart=/usr/local/lsws-prometheus-exporter/lsws-prometheus-exporter
+ExecStart=/usr/bin/lsws-prometheus-exporter $ARGS
 Restart=always
 
 [Install]
