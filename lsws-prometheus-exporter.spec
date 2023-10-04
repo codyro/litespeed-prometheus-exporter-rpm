@@ -40,6 +40,7 @@ install -Dpm 0644 %{SOURCE2} %{buildroot}%{_sysconfdir}/sysconfig/%{name}
 %files
 %{_bindir}/%{name}
 %{_unitdir}/%{name}.service
+%{_sysconfdir}/sysconfig/%{name}
 
 
 %changelog
