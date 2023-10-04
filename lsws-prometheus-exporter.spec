@@ -7,9 +7,10 @@ License:       	GPL3
 URL:            https://github.com/codyro/litespeed-prometheus-exporter
 Source0:        %{name}-%{version}.tar.gz
 Source1:        %{name}.service
-Patch0:		0001-Implement-basic-auth-w-environmental-variables.patch
+Patch0:		    0001-Implement-basic-auth-w-environmental-variables.patch
 
 BuildRequires:  golang
+BuildRequires:  systemd
 #BuildRequires:	systemd-rpm-macros
 
 %description
