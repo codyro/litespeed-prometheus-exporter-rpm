@@ -3,15 +3,14 @@ Version:        0.0.1
 Release:        2%{?dist}
 Summary:        LiteSpeed Prometheus Exporter
 
-License:       	GPL3
+License:        GPL3
 URL:            https://github.com/codyro/litespeed-prometheus-exporter
 Source0:        %{name}-%{version}.tar.gz
 Source1:        %{name}.service
-Patch0:		    0001-Implement-basic-auth-w-environmental-variables.patch
+Patch0:         0001-Implement-basic-auth-w-environmental-variables.patch
 
 BuildRequires:  golang
 BuildRequires:  systemd
-#BuildRequires:	systemd-rpm-macros
 
 %description
 The LiteSpeed Prometheus Exporter is a specially designed Prometheus application and uses the LiteSpeed Enterprise or the OpenLiteSpeed Web Server controller to export Prometheus compatible data which can also be used by Grafana and other compatible applications.
