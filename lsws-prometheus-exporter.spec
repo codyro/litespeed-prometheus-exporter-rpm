@@ -23,7 +23,7 @@ The LiteSpeed Prometheus Exporter is a specially designed Prometheus application
 
 %prep
 %setup -q -n %{commit_dir}
-%patch0 -p1
+%patch -P 0 -p1
 
 %build
 CGO_ENABLED=0 GOOS=linux go mod tidy
