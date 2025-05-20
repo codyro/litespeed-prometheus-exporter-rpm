@@ -28,7 +28,7 @@ The LiteSpeed Prometheus Exporter is a specially designed Prometheus application
 %build
 CGO_ENABLED=0 GOOS=linux go mod tidy
 CGO_ENABLED=0 GOOS=linux go build -o %{name} -ldflags \
-	"-X main.version=%{version} -X main.gitRepo=%{git_commit} -linkmode=external"
+	"-X main.version=%{version} -X main.gitRepo=%{git_commit}"
 
 %install
 install -Dpm 0755 %{name} %{buildroot}%{_bindir}/%{name}
@@ -47,5 +47,15 @@ install -Dpm 0644 %{SOURCE2} %{buildroot}%{_sysconfdir}/sysconfig/%{name}
 %{_sysconfdir}/sysconfig/%{name}
 
 
-%autochangelog
 %changelog
+* Tue May 20 2025 Cody Robertson <cody@hawkhost.com> - 0.1.2-1
+- Update from upstream
+
+* Wed Oct 04 2023 Cody Robertson <cody@hawkhost.com> - 0.0.1-3
+- Update service file to use environment file
+
+* Tue Oct 03 2023 Cody Robertson <cody@hawkhost.com> - 0.0.1-2
+- Add patch to support basic auth
+
+* Tue Oct 03 2023 Cody Robertson <cody@hawkhost.com> - 0.0.1-1
+- Initial package
