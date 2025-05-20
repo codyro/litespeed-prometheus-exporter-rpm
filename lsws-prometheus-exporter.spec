@@ -1,5 +1,7 @@
 %define debug_package %{nil}
 %define git_commit a07898e
+%global git_commit_long a07898ee3e3bd4dfeaed29f6863e37f373a0e943
+%global commit_dir litespeed-prometheus-exporter-%{git_commit_long}
 
 Name:           lsws-prometheus-exporter
 Version:        0.1.2
@@ -20,7 +22,8 @@ BuildRequires:  systemd
 The LiteSpeed Prometheus Exporter is a specially designed Prometheus application and uses the LiteSpeed Enterprise or the OpenLiteSpeed Web Server controller to export Prometheus compatible data which can also be used by Grafana and other compatible applications.
 
 %prep
-%autosetup -n litespeed-prometheus-exporter-%{git_commit} -p1
+%setup -q -n %{commit_dir}
+%patch0 -p1
 
 %build
 CGO_ENABLED=0 GOOS=linux go mod tidy
@@ -45,5 +48,4 @@ install -Dpm 0644 %{SOURCE2} %{buildroot}%{_sysconfdir}/sysconfig/%{name}
 
 
 %autochangelog
-
 %changelog
